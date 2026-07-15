@@ -10,43 +10,53 @@ Tone: professional, concise, and action-oriented. Avoid clichés and filler copy
 
 ## Stack
 
-- **Next.js** (App Router) with **React** and **TypeScript**
-- **Tailwind CSS** for styling
-- Deploy target: **Vercel**
-
-Update this section as the stack is finalized during development.
+- **Vite** with **React** (JSX)
+- **CSS** for styling
+- Deploy target: static host (e.g. **Vercel**)
 
 ## Commands
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
+npm run dev        # http://localhost:5173
 npm run build
+npm run preview
 npm run lint
-npm run typecheck  # if configured
 ```
 
 ## File structure
 
 ```
-app/              # Pages, layouts, global styles
-components/       # UI primitives and page sections
-  sections/       # Hero, About, Projects, Skills, Experience, Contact
-  ui/             # Buttons, cards, typography helpers
-lib/              # Types, utilities, static data
-public/           # Images, resume PDFs, project screenshots
+src/
+  components/     # Reusable UI (e.g. SettingsForm)
+  App.jsx         # Root application component
+  main.jsx        # React entry point
+  App.css         # App-level styles
+  index.css       # Global base styles
+public/           # Static assets
+index.html        # HTML shell (Vite entry)
+vite.config.js    # Vite configuration
 ```
 
 ## Conventions
 
-- Use **TypeScript strict** mode; avoid `any`
-- Prefer **Server Components** by default; add `"use client"` only when needed (state, effects, browser APIs)
-- Use **named exports** for components and utilities
-- Keep copy in components or a dedicated data/i18n layer — not scattered magic strings
-- Use `next/image` for all images
+- Use **controlled React inputs** for all form fields
+- Export validation logic separately when forms need tests (e.g. `validateSettings`)
+- Use **named exports** for utilities; default exports for components as needed
+- Keep copy in components or a dedicated data layer — not scattered magic strings
 - Respect `prefers-reduced-motion` for animations
-- Mobile-first responsive design with Tailwind breakpoints (`sm`, `md`, `lg`, `xl`)
+- Mobile-first responsive design
 - Match existing naming and file layout when adding new code
+
+## Project Rules
+
+1. All forms must use controlled React inputs.
+2. Every form must validate required fields before submission.
+3. Every input must include an associated label and support keyboard navigation.
+4. Request tests before considering a feature complete.
+5. Review edge cases before committing generated code.
+
+These rules are concrete and testable — follow them when implementing or reviewing any feature.
 
 ## Rules
 
