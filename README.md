@@ -2,7 +2,7 @@
 
 A capstone project to build and deploy a personal portfolio website that showcases projects, skills, experience, and contact information.
 
-**Status:** Early setup — repository scaffolding is in place; the application has not been scaffolded yet.
+**Status:** Vite + React application scaffolded; portfolio sections in progress.
 
 ## About
 
@@ -20,9 +20,9 @@ This repository is the source for a recruiter-friendly portfolio site. The goal 
 
 | Layer        | Choice                                      |
 | ------------ | ------------------------------------------- |
-| Framework    | Next.js (App Router) with React & TypeScript |
-| Styling      | Tailwind CSS                                |
-| Deployment   | Vercel                                      |
+| Framework    | Vite with React (JSX)                       |
+| Styling      | CSS                                         |
+| Deployment   | Static host (e.g. Vercel, Netlify)          |
 
 ## Planned Site Sections
 
@@ -51,45 +51,41 @@ cd portfolio-capstone
 
 ### Development commands
 
-Once the Next.js application is scaffolded, use:
-
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-Additional scripts (expected after setup):
+Additional scripts:
 
 ```bash
 npm run build      # Production build
+npm run preview    # Preview production build
 npm run lint       # Lint source files
-npm run typecheck  # TypeScript check (if configured)
 ```
 
 ## Repository Structure
 
-**Current**
-
 ```
 portfolio-capstone/
-├── CLAUDE.md    # AI assistant guidance for this repo
-├── LICENSE      # MIT License
 ├── README.md
-└── .gitignore
-```
-
-**Planned (after scaffolding)**
-
-```
-portfolio-capstone/
-├── app/              # Next.js App Router pages and layouts
-├── components/       # Reusable UI and section components
-│   ├── sections/     # Hero, About, Projects, Skills, Experience, Contact
-│   └── ui/           # Buttons, cards, typography helpers
-├── lib/              # Utilities, types, and static data
-└── public/           # Images, resume PDFs, and static assets
+├── LICENSE
+├── .gitignore
+├── CLAUDE.md
+├── WORKFLOW.md
+├── package.json
+├── vite.config.js
+├── index.html
+├── public/              # Static assets
+└── src/
+    ├── App.jsx
+    ├── main.jsx
+    ├── App.css
+    ├── index.css
+    └── components/
+        └── SettingsForm.jsx
 ```
 
 ## License
